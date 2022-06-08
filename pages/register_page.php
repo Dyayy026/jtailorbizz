@@ -1,3 +1,4 @@
+<?php element('header1')?>
 
 <div class="register" style="width: 40%; padding: 20px; color: white; margin-top:20px; background-color:#B23CFD;">
 <form  method="POST">
@@ -38,3 +39,6 @@
 
 
 
+
+
+<?php element('footer1')?>
