@@ -7,7 +7,7 @@ define( 'DBUSER', 'root' );
 define( 'DBPASS', '' );
 define( 'DBNAME', 'jtailorbizz_db' );
 
-define( 'SITE_TITLE', 'JTailorBizz' );
+define( 'SITE_TITLE', 'jtailorbizz_db' );
 
 
 /* 
