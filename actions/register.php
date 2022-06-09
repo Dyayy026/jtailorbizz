@@ -7,8 +7,9 @@
         $eadd = $_POST['email'];
         $pword = $_POST['pword'];
         $status = "Pending";
+        $utype = "Sewer";
 
-        $DB->query( "INSERT INTO users ( fname, mname, lname, cnumber, eadd, pword,status ) VALUES( '$fname','$mname','$lname','$cnumber','$eadd','$pword','$status' )" );
+        $DB->query( "INSERT INTO users ( fname, mname, lname, cnumber, eadd, pword,status,usertype ) VALUES( '$fname','$mname','$lname','$cnumber','$eadd','$pword','$status','$utype' )" );
         
         header( "Location: " . SITE_URL . "/?page=register_sucess_confirmation" );
 ?>
