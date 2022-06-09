@@ -6,24 +6,24 @@
     <div class="col-md-12">
 	
     <div class="mb-3">
-		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="First Name" require name="fname">
+		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="First Name"  name="fname" required>
 	</div>
     <div class="mb-3">
-		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Middle Name" require name="mname">
+		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Middle Name"  name="mname" required>
 	</div>
     <div class="mb-3">
-		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name" require name="lname">
+		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name"  name="lname" required>
 	</div>
 
     <div class="mb-3">
-		<input type="number" class="form-control" id="exampleInputPassword1" placeholder="Contact Number" require name="cnum">
+		<input type="number" class="form-control" id="exampleInputPassword1" placeholder="Contact Number"  name="cnum" required>
 	</div>
 	
 	<div class="mb-3">
-		<input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email Address" require name="email">
+		<input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email Address"  name="email" required>
 	</div>
     <div class="mb-3">
-		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" require name="pword">
+		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="pword" required>
 	</div>
 	
 	<button type="submit" name="submit" class="btn btn-primary">Register</button>
