@@ -5,7 +5,7 @@
         $lname = $_POST['lname'];
         $cnumber = $_POST['cnum'];
         $eadd = $_POST['email'];
-        $pword = $_POST['pword'];
+        $pword = md5($_POST['pword']);
         $status = "Pending";
         $utype = "Sewer";
 
