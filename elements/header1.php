@@ -51,9 +51,7 @@
 </nav>
 
 
-<?php 
-	show_message();
-?>
+
             
 <div class="container">
   <div class="row">

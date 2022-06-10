@@ -1,5 +1,9 @@
   </div>
 </div>
+<br><br>
+<?php 
+	show_message();
+?>
 
 <!-- this is the footer -->
 <section class="" style="bottom: 0; position:fixed; width:100%; background: #B23CFD;">
