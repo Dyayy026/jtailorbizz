@@ -1,16 +1,16 @@
 <?php 
 
 	$email = $_POST[ 'username' ];
-	$password = md5( $_POST[ 'password' ] );
-	$q = "SELECT * FROM users WHERE email = '$email' AND password = '$password' LIMIT 1";
+	$password = $_POST[ 'password' ];
+	$q = "SELECT * FROM users WHERE eadd = '$email' AND pword = '$password' LIMIT 1";
 	$check = $DB->query( $q );
 
 	if( $check->num_rows ) {
 		$user = $check->fetch_assoc();
-		$approved = $user[ 'approved' ];
+		$approved = $user[ 'usertype' ];
 		if( $approved ) {
-			$_SESSION[ AUTH_ID ] = $user[ 'userid' ];
-			$_SESSION[ AUTH_NAME ] = $user[ 'email' ];
+			$_SESSION[ AUTH_ID ] = $user[ 'id' ];
+			$_SESSION[ AUTH_NAME ] = $user[ 'fname' ];
 			$_SESSION[ AUTH_TYPE ] = $user[ 'usertype' ];
 			set_message( "Welcome back {$user[ 'usertype' ]}!", 'success' );
 			redirect( $restricted_pages[ $_SESSION[ AUTH_TYPE ] ][ 'default_page' ] );
