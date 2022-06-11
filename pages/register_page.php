@@ -29,10 +29,12 @@
 		<input id="input-style" class="form-control" type="file" id="formFile" name="photo" required>
 	</div>
 		<button type="submit" name="submit" class="btn btn-primary">Register</button>
+		<a href="<?php echo SITE_URL?>/?page=login1" style="margin-left:250px; color:white;">Go back to Login...</a>
     </div>
+	
 </div>
 </div>
-<a href="<?php echo SITE_URL?>/?page=login1">Go back to Login...</a>
+
 </form>
 </div>
 
