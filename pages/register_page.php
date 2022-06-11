@@ -1,7 +1,7 @@
 <?php element('header1')?>
 
-<div class="register" style="width: 40%; padding: 20px; color: white; margin-top:20px; background-color:#B23CFD;">
-<form  method="POST">
+<div class="register" style="width: 40%; padding: 20px; color: white; background-color:#B23CFD;">
+<form  method="POST" enctype="multipart/form-data">
 <input type="hidden" name="action" value="register">
     <div class="col-md-12">
 	
@@ -25,12 +25,12 @@
     <div class="mb-3">
 		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="pword" required>
 	</div>
-	
-	<button type="submit" name="submit" class="btn btn-primary">Register</button>
+	<div class="mb-3">
+		<input id="input-style" class="form-control" type="file" id="formFile" name="photo" required>
+	</div>
+		<button type="submit" name="submit" class="btn btn-primary">Register</button>
     </div>
-  
 </div>
-
 </div>
 <a href="<?php echo SITE_URL?>/?page=login1">Go back to Login...</a>
 </form>
