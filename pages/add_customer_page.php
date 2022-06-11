@@ -1,6 +1,6 @@
 <?php element('header1')?>
 
-<div class="register" style="width: 30%; padding: 20px; color: white; margin-top:20px; background-color:#B23CFD;">
+<div class="register" style="width: 30%; padding: 20px;margin-bottom: -30px; color: white; margin-top:20px; background-color:#B23CFD;">
 <form  method="POST">
 <input type="hidden" name="action" value="add_customer">
     <div class="col-md-12">
