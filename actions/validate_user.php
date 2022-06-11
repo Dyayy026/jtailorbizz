@@ -7,8 +7,8 @@
 
 	if( $check->num_rows ) {
 		$user = $check->fetch_assoc();
-		$approved = $user[ 'usertype' ];
-		if( $approved ) {
+		$user[ 'status' ];
+		if( $user['status'] == "Approved" ) {
 			$_SESSION[ AUTH_ID ] = $user[ 'id' ];
 			$_SESSION[ AUTH_NAME ] = $user[ 'fname' ];
 			$_SESSION[ AUTH_TYPE ] = $user[ 'usertype' ];
