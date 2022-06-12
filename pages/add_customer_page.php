@@ -41,6 +41,8 @@
 	</form>
 
 
+
+
 <div class="col-md-8">
 <h3 style="margin-top: 10px;"><strong>Customer</strong></h3>
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -56,17 +58,30 @@
 	</tr>
   </thead>
   <tbody>
-	<tr>
-	<td> 1</td>
-	  <td>Harris</td>
-	  <td>Mark</td>
-	  <td>012346</td>
-	  <td>Laguna</td>
-	  <td>
-		<button>Edit</button>
-		<button>Delete</button>
-	</td>
-	</tr>
+	
+	<!-- this is for view customer -->
+	<?php
+		$sql = "SELECT * FROM customer_tb ORDER BY cust_id DESC";
+		$result = mysqli_query($DB, $sql);
+
+		while($row = mysqli_fetch_assoc($result)){
+
+		?>
+		<tr>
+		<td><?php echo $row['cust_id'];?></td>
+		<td><?php echo $row['cust_fname'];?></td>
+		<td><?php echo $row['cust_lname'];?></td>
+		<td><?php echo $row['cust_cnum'];?></td>
+		<td><?php echo $row['cust_address'];?></td>
+		<td>
+			<button class="btn btn-primary">
+				View
+			</button>
+		</td>
+		</tr>
+		<?php
+		}
+		?>
 	
   </tbody>
 </table>
