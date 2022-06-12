@@ -8,6 +8,7 @@
         $pword = md5($password);
         $status = "Pending";
         $utype = "Sewer";
+		$id = (rand(100,900)); //generates random id for user
 
         $fileName = $_FILES['photo']['name'];
 		$fileTmpName = $_FILES['photo']['tmp_name'];
@@ -36,7 +37,7 @@
 			echo "File type not accepted";
 		}
 
-        $DB->query( "INSERT INTO users ( fname, mname, lname, cnumber, eadd, pword,status,usertype,photo ) VALUES( '$fname','$mname','$lname','$cnumber','$eadd','$pword','$status','$utype','$fileNameNew' )" );
+        $DB->query( "INSERT INTO users ( user_id,fname, mname, lname, cnumber, eadd, pword,status,usertype,photo ) VALUES( '$id','$fname','$mname','$lname','$cnumber','$eadd','$pword','$status','$utype','$fileNameNew' )" );
         
         header( "Location: " . SITE_URL . "/?page=register_sucess_confirmation" );
 ?>
