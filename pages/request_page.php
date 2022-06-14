@@ -1,4 +1,5 @@
 <?php element('header1')?>
+<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL ?>/assets/css/card.css">
 <style>
     .btn-side-button{
         width: 250px;
@@ -13,55 +14,65 @@
 	}
 </style>
 <div class="col-md-3">
-    <div class="register" style="width: 100%; padding: 20px;margin-bottom: -30px; color: white; margin-top:20px; background-color:#B23CFD;">
+    <div class="register">
     <button class="btn btn-primary mb-3 btn-side-button">Requests</button>
     <button class="btn btn-success mb-3 btn-side-button">Approved</button>
     <button class="btn btn-danger mb-3 btn-side-button">Denied</button>
     </div>
 </div>
-<div class="col-md-9">
-<h3 style="margin-top: 10px;"><strong>Requests</strong></h3>
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
-<table class="table table-bordered table-striped mb-0">
-  <thead>
-	<tr>
-	  <th scope="col">User ID</th>
-	  <th scope="col">Full Name</th>
-	  <th scope="col">Contact Number</th>
-	  <th scope="col">Email Address</th>
-	  <th scope="col">Status</th>
-	  <th scope="col">Action</th>
-	</tr>
-  </thead>
-  <tbody>
-	
+
 	<!-- this is for view customer -->
-	<?php
-		$sql = "SELECT * FROM customer_tb ORDER BY cust_id DESC";
+<div class="col-md-9 request-container" style="overflow:scroll; height:400px;">
+<h3 style="margin-top: 10px;"><strong>Requests</strong></h3>
+
+<?php
+		$sql = "SELECT * FROM users WHERE status = 'Pending' ORDER BY id DESC";
 		$result = mysqli_query($DB, $sql);
 
-		while($row = mysqli_fetch_assoc($result)){
+		
 
+		while($row = mysqli_fetch_assoc($result)){
+			$str = "./assets/pics/" . $row['photo'];
+			$new_str = str_replace(' ', '', $str);
 		?>
-		<tr>
-		<td><?php echo $row['cust_id'];?></td>
-		<td><?php echo $row['cust_fname'];?></td>
-		<td><?php echo $row['cust_lname'];?></td>
-		<td><?php echo $row['cust_cnum'];?></td>
-		<td><?php echo $row['cust_address'];?></td>
-		<td>
-			<button class="btn btn-primary">
-				View
-			</button>
-		</td>
-		</tr>
+		<!-- THIS IS CARD -->
+		<div class="card-container">
+		<div class="container mt-5 d-flex justify-content-center">
+			<div class="card p-3">
+				<div class="d-flex align-items-center">
+						<div class="image">
+						<img src="<?php echo $new_str?>" class="rounded" width="100"  >
+						</div>
+				<div class="ml-3 w-100">
+				<h4 class="mb-0 mt-0"><?php echo $row['fname']?></h4>
+				<span><i><?php echo $row['eadd']?></i></span>
+				<div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+					<div class="d-flex flex-column">
+						<span class="articles">Request Date</span>
+						<span class="number1"><?php echo $row['date_created']?></span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="followers">Status</span>
+						<span class="number2"><?php echo $row['status']?></span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="rating">User ID</span>
+						<span class="number3"><?php echo $row['user_id']?></span>
+					</div>
+				</div>
+				<div class="button mt-2 d-flex flex-row align-items-center">
+					<button class="btn btn-sm btn-outline-primary w-100">Approve</button>
+					<button class="btn btn-sm btn-danger w-100 ml-2">Reject</button>
+				</div>
+				</div>
+				</div>
+			</div>
+			</div>
+			</div>
 		<?php
 		}
 		?>
-	
-  </tbody>
-</table>
-
-</div>
 </div>
 <?php element('footer1')?>
+
+

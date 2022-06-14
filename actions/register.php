@@ -8,7 +8,9 @@
         $pword = md5($password);
         $status = "Pending";
         $utype = "Sewer";
-		$id = (rand(100,900)); //generates random id for user
+		$id1 = (rand(100,900)); //generates random id for user
+		$id2 = (rand(100,900)); //generates second set of random id for user
+		$id = $id1 .'-'. $id2;
 
         $fileName = $_FILES['photo']['name'];
 		$fileTmpName = $_FILES['photo']['tmp_name'];
@@ -41,3 +43,4 @@
         
         header( "Location: " . SITE_URL . "/?page=register_sucess_confirmation" );
 ?>
+
