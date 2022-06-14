@@ -36,6 +36,7 @@
             <li><a class="dropdown-item" href="#">In Progess</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Finished</a></li>
+            <li><a class="dropdown-item" href="#">For Pickup</a></li>
           </ul>
         </li>
         <li class="nav-item">
