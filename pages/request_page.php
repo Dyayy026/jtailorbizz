@@ -36,6 +36,7 @@
 			$new_str = str_replace(' ', '', $str);
 		?>
 		<!-- THIS IS CARD -->
+
 		<div class="card-container">
 		<div class="container mt-5 d-flex justify-content-center">
 			<div class="card p-3">
@@ -61,8 +62,8 @@
 					</div>
 				</div>
 				<div class="button mt-2 d-flex flex-row align-items-center">
-					<button class="btn btn-sm btn-outline-primary w-100">Approve</button>
-					<button class="btn btn-sm btn-danger w-100 ml-2">Reject</button>
+					<a href="update_product.php?id=<?php echo $row['id']?>" ><button class="btn btn-sm btn-outline-primary" style="background-color: teal;">Approve</button></a>
+					<a href="reject_product.php?id=<?php echo $row['id']?>"><button class="btn btn-sm btn-outline-primary">Reject</button></a>
 				</div>
 				</div>
 				</div>
