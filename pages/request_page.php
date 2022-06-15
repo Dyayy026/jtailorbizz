@@ -28,7 +28,6 @@
 <?php
 		$sql = "SELECT * FROM users WHERE status = 'Pending' ORDER BY id DESC";
 		$result = mysqli_query($DB, $sql);
-
 		
 
 		while($row = mysqli_fetch_assoc($result)){
@@ -36,7 +35,6 @@
 			$new_str = str_replace(' ', '', $str);
 		?>
 		<!-- THIS IS CARD -->
-
 		<div class="card-container">
 		<div class="container mt-5 d-flex justify-content-center">
 			<div class="card p-3">
@@ -45,6 +43,7 @@
 						<img src="<?php echo $new_str?>" class="rounded" width="100"  >
 						</div>
 				<div class="ml-3 w-100">
+				<input type="hidden" <?php echo $row['id']?>>
 				<h4 class="mb-0 mt-0"><?php echo $row['fname']?></h4>
 				<span><i><?php echo $row['eadd']?></i></span>
 				<div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
@@ -62,8 +61,8 @@
 					</div>
 				</div>
 				<div class="button mt-2 d-flex flex-row align-items-center">
-					<a href="update_product.php?id=<?php echo $row['id']?>" ><button class="btn btn-sm btn-outline-primary" style="background-color: teal;">Approve</button></a>
-					<a href="reject_product.php?id=<?php echo $row['id']?>"><button class="btn btn-sm btn-outline-primary">Reject</button></a>
+					<a href="<?php echo SITE_URL ?>/?page=approve_user&id=<?php echo $row['id']?>" ><button class="btn btn-sm btn-outline-primary" style="margin-right: 20px;">Approve</button></a>
+					<a href="reject_product.php?id=<?php echo $row['id']?>"><button class="btn btn-sm btn-outline-danger"  style="width: 70px;">Reject</button></a>
 				</div>
 				</div>
 				</div>

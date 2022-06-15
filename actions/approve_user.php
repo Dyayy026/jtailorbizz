@@ -3,10 +3,10 @@
 
 if( isset( $_POST ) ) {
 
-	$name = $_POST[ 'name' ];
 	$id = $_POST[ 'id' ];
+	$status = "Approved";
 
-	if( $DB->query( "UPDATE products SET name='$name' WHERE id=$id" ) ) {
+	if( $DB->query( "UPDATE products SET status='$status' WHERE id=$id" ) ) {
 		$MESSAGE = "Product successfully updated!";
 		$MESSAGE_TYPE = "info";
 	} else {
