@@ -33,6 +33,11 @@
 		
 
 		while($row = mysqli_fetch_assoc($result)){
+			$id = $row['id'];
+			$user_id = $row['user_id'];
+			$fname = $row['fname'];
+			$lname = $row['lname'];
+			$utype = $row['usertype'];
 			$str = "./assets/pics/" . $row['photo'];
 			$new_str = str_replace(' ', '', $str);
 		?>
@@ -63,7 +68,7 @@
 					</div>
 				</div>
 				<div class="button mt-2 d-flex flex-row align-items-center">
-					<button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-right: 20px;">Approve</button></a>
+					<button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-right: 20px;">Approve</button>
 					<a href="reject_product.php?id=<?php echo $row['id']?>"><button class="btn btn-sm btn-outline-danger"  style="width: 70px;">Reject</button></a>
 				</div>
 				</div>
@@ -84,17 +89,24 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Approve <?php echo $fname . ' ' .$lname?> ?</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        Modal body..
+		<img src="<?php echo $new_str?>" alt="" class="rounded" width="30%"> <br>
+	   <label for="">Name:</label>
+	   <input type="text" class="form-control" value="<?php echo $fname .' '. $lname?> " readonly>
+	   <label for="">ID:</label>
+	   <input type="text" class="form-control" value="<?php echo $user_id?> " readonly>
+	   <label for="">Position:</label>
+	   <input type="text" class="form-control" value="<?php echo $utype?> " readonly>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
+		<a href="approve_user.php?id=<?php echo $id?>"><button class="btn btn-outline-primary"  style="width: 100px;">Approve</button></a>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
 
