@@ -27,7 +27,7 @@
 			if ($fileError === 0) {
 				if ($fileSize < 100000000000) {
 					$fileNameNew = uniqid('', true) . "." . $fileActualExt;
-					$fileDestination = 'D:/XAMPP1/htdocs/practice lorem/assets/pics/' . $fileNameNew;
+					$fileDestination = 'D:/XAMPP/htdocs/practice lorem/assets/pics/' . $fileNameNew;
 					move_uploaded_file($fileTmpName, $fileDestination);
 				} else {
 					echo "File is too big";
