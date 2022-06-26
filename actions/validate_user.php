@@ -1,7 +1,7 @@
 <?php 
 
 	$email = $_POST[ 'username' ];
-	$password = $_POST[ 'password' ];
+	$password = md5($_POST[ 'password' ]);
 	$q = "SELECT * FROM users WHERE eadd = '$email' AND pword = '$password' LIMIT 1";
 	$check = $DB->query( $q );
 

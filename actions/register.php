@@ -4,7 +4,7 @@
         $lname = $_POST['lname'];
         $cnumber = $_POST['cnum'];
         $eadd = $_POST['email'];
-        $password = mysqli_real_escape_string($conn, $_POST['pword']);
+        $password = mysqli_real_escape_string($DB,$_POST['pword']);
         $pword = md5($password);
         $status = "Pending";
         $utype = "Sewer";
